@@ -4,7 +4,8 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Brownie Cake - Raw Delight Cakes</title>
+     <title>Brownie Cake - Adelina Cakes</title>
+     <link rel="icon" href="images/logo.png">
      <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;600;700&display=swap" rel="stylesheet">
      <link rel="stylesheet" href="css/style.css">
      <style>
@@ -19,6 +20,7 @@
 
           /* --- Product image area --- */
           .product-image {
+               padding-top: 0.5rem;
                flex: 1 1 500px;
                display: flex;
                align-items: flex-start;
@@ -65,31 +67,6 @@
                transition: 0.3s ease;
           }
 
-          
-
-          /* --- Product info --- */
-          /*.product-info {
-               flex: 1 1 400px;
-          }
-
-          .product-info h1 {
-               font-size: 2.5rem;
-               margin-bottom: 1rem;
-          }
-
-          .product-info p {
-               font-size: 1.1rem;
-               margin-bottom: 1rem;
-               color: #555;
-          }
-
-          .price {
-               font-size: 1.5rem;
-               font-weight: 600;
-               color: #76b5a6;
-               margin-bottom: 1.5rem;
-          }*/
-
           .btn {
                background-color: #76b5a6;
                color: white;
@@ -105,21 +82,19 @@
           }
 
           .product-info {
-               padding: 2rem;
+               padding-left: 2rem;
                border-radius: 15px;
                text-align: left;
-               line-height: 1.7;
                max-width: 500px;
           }
 
           .product-info h1 {
-               font-size: 2.3rem;
                margin-bottom: 1.2rem;
                color: #333;
           }
 
           .product-info .ingredients {
-               font-size: 1.05rem;
+               font-size: 1rem;
                color: #555;
                margin-bottom: 1.5rem;
           }
@@ -158,13 +133,6 @@
           .price-box strong {
                color: #76b5a6;
           }
-
-          /*.product-info .btn {
-               display: inline-block;
-               margin-top: 0.5rem;
-               text-align: center;
-          }*/
-
 
           /* --- Related cakes --- */
           .related {
@@ -236,7 +204,7 @@
           <nav>
                <a href="index.html">Home</a>
                <a href="about.html">About</a>
-               <a href="cakes.html">Cakes</a>
+               <a href="cakes.html" class="active">Cakes</a>
                <a href="contact.html">Contact</a>
           </nav>
      </header>
@@ -245,29 +213,29 @@
           <section class="product-container container">
                <div class="product-image">
                     <div class="gallery-thumbnails">
-                         <img src="images/brownie1.jpg" alt="Brownie main" onclick="changeImage(this)" class="active">
-                         <img src="images/brownie2.jpg" alt="Brownie slice" onclick="changeImage(this)">
-                         <img src="images/brownie.jpg" alt="Brownie detail" onclick="changeImage(this)">
+                         <img src="images/browniepcs.jpg" alt="Brownie main" onclick="changeImage(this)" class="active">
+                         <img src="images/brownie.JPG" alt="Brownie slice" onclick="changeImage(this)">
+                         <img src="images/browniefull.JPG" alt="Brownie detail" onclick="changeImage(this)">
                     </div>
 
                     <div class="main-image-container">
-                         <img id="main-image" src="images/brownie1.jpg" alt="Raw Vegan Brownie Cake">
+                         <img id="main-image" src="images/browniepcs.jpg" alt="Raw Vegan Brownie Cake">
                     </div>
                </div>
 
                <div class="product-info">
                     <h1>Raw Vegan Brownie Cake</h1>
                     <p class="ingredients">
-                         <strong>Ingredients:</strong> Dates, walnuts, almonds, cacao powder, gluten-free oat flakes,
-                         agave syrup, cinnamon, salt, vanilla.
+                         <strong>Ingredients:</strong> Dates, walnuts, almonds, cacao powder, gluten-free oat flakes, coconut oil
+                         agave syrup, cinnamon, salt.
                     </p>
                
                     <div class="price-box">
                          <h4>Price</h4>
                          <ul>
-                              <li>18 cm (8 persons) — <strong>56 CHF</strong></li>
-                              <li>24 cm (12–14 persons) — <strong>78 CHF</strong></li>
-                              <li>Single square — from <strong>3,6 CHF</strong></li>
+                              <li>&#248; 18 cm (8 slices) — <strong>54 CHF</strong></li>
+                              <li>&#248; 24 cm (12–14 slices) — <strong>85 CHF</strong></li>
+                              <li>Single square — from <strong>4,2 CHF</strong></li>
                          </ul>
                     </div>
 
@@ -295,7 +263,7 @@
      </main>
 
      <footer>
-          <p>&copy; 2025 Raw Delight Cakes. All Rights Reserved. <a href="https://www.instagram.com/adelinacakes_ch/"
+          <p>&copy; 2025 Adelina Cakes. All Rights Reserved. <a href="https://www.instagram.com/adelinacakes_ch/"
                     target="_blank">Instagram</a></p>
      </footer>
 

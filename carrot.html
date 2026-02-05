@@ -4,7 +4,8 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Brownie Cake - Raw Delight Cakes</title>
+     <title>Carrot Cake - Adelina Cakes</title>
+     <link rel="icon" href="images/logo.png">
      <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;600;700&display=swap" rel="stylesheet">
      <link rel="stylesheet" href="css/style.css">
      <style>
@@ -13,46 +14,61 @@
                flex-wrap: wrap;
                justify-content: center;
                align-items: flex-start;
-               gap: 2rem;
+               gap: 3rem;
                padding: 3rem 1rem;
           }
 
+          /* --- Product image area --- */
           .product-image {
-               flex: 1 1 400px;
+               padding-top: 0.5rem;
+               flex: 1 1 500px;
+               display: flex;
+               align-items: flex-start;
+               justify-content: center;
+               gap: 1rem;
+          }
+
+          .gallery-thumbnails {
+               display: flex;
+               flex-direction: column;
+               gap: 0.8rem;
+               justify-content: flex-start;
+               align-items: center;
+          }
+
+          .gallery-thumbnails img {
+               width: 80px;
+               height: 80px;
+               object-fit: cover;
+               border-radius: 10px;
+               cursor: pointer;
+               opacity: 0.8;
+               transition: transform 0.3s, opacity 0.3s;
+               box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+          }
+
+          .gallery-thumbnails img:hover,
+          .gallery-thumbnails img.active {
+               opacity: 1;
+               transform: scale(1.05);
+               border: 2px solid #76b5a6;
+          }
+
+          .main-image-container {
+               flex: 1;
                text-align: center;
           }
 
-          .product-image img {
+          .main-image-container img {
                width: 100%;
                max-width: 450px;
                border-radius: 15px;
                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          }
-
-          .product-info {
-               flex: 1 1 400px;
-          }
-
-          .product-info h1 {
-               font-size: 2.5rem;
-               margin-bottom: 1rem;
-          }
-
-          .product-info p {
-               font-size: 1.1rem;
-               margin-bottom: 1rem;
-               color: #555;
-          }
-
-          .price {
-               font-size: 1.5rem;
-               font-weight: 600;
-               color: #76b5a6;
-               margin-bottom: 1.5rem;
+               transition: 0.3s ease;
           }
 
           .btn {
-               background-color: #a3d2ca;
+               background-color: #76b5a6;
                color: white;
                padding: 0.75rem 1.5rem;
                border-radius: 25px;
@@ -62,10 +78,64 @@
           }
 
           .btn:hover {
-               background-color: #76b5a6;
+               background-color: #4fa793;
           }
 
-          /* Related cakes section */
+          .product-info {
+               padding-left: 2rem;
+               border-radius: 15px;
+               text-align: left;
+               max-width: 500px;
+          }
+
+          .product-info h1 {
+               font-size: 1.8rem;
+               margin-bottom: 1.2rem;
+               color: #333;
+          }
+
+          .product-info .ingredients {
+               font-size: 1rem;
+               color: #555;
+               margin-bottom: 1.5rem;
+          }
+
+          .squares {
+               font-size: 0.75rem;
+               margin-bottom: 2rem;
+          }
+
+          .price-box {
+               padding: 1rem 1.5rem;
+               border-left: 4px solid #76b5a6;
+               border-radius: 10px;
+               margin-bottom: 1.2rem;
+          }
+
+          .price-box h4 {
+               margin-bottom: 0.8rem;
+               color: #333;
+               font-weight: 600;
+               font-size: 1.2rem;
+          }
+
+          .price-box ul {
+               list-style: none;
+               margin: 0;
+               padding: 0;
+          }
+
+          .price-box li {
+               margin-bottom: 0.4rem;
+               font-size: 1.05rem;
+               color: #555;
+          }
+
+          .price-box strong {
+               color: #76b5a6;
+          }
+
+          /* --- Related cakes --- */
           .related {
                background-color: #fff8f0;
                text-align: center;
@@ -108,6 +178,24 @@
                color: #76b5a6;
                font-weight: 600;
           }
+
+          @media(max-width: 768px) {
+               .product-image {
+                    flex-direction: column;
+                    align-items: center;
+               }
+
+               .gallery-thumbnails {
+                    flex-direction: row;
+                    justify-content: center;
+                    gap: 0.5rem;
+               }
+
+               .gallery-thumbnails img {
+                    width: 70px;
+                    height: 70px;
+               }
+          }
      </style>
 </head>
 
@@ -117,7 +205,7 @@
           <nav>
                <a href="index.html">Home</a>
                <a href="about.html">About</a>
-               <a href="cakes.html">Cakes</a>
+               <a href="cakes.html" class="active">Cakes</a>
                <a href="contact.html">Contact</a>
           </nav>
      </header>
@@ -125,42 +213,72 @@
      <main>
           <section class="product-container container">
                <div class="product-image">
-                    <img src="images/carrot.jpg" alt="Raw Vegan Brownie Cake">
+                    <div class="gallery-thumbnails">
+                         <img src="images/carrotpcs.jpg" alt="Brownie main" onclick="changeImage(this)" class="active">
+                         <img src="images/carrot.JPG" alt="Brownie slice" onclick="changeImage(this)">
+                         <img src="images/carrotfull.JPG" alt="Brownie detail" onclick="changeImage(this)">
+                    </div>
+
+                    <div class="main-image-container">
+                         <img id="main-image" src="images/carrotpcs.jpg" alt="Raw Vegan Brownie Cake">
+                    </div>
                </div>
+
                <div class="product-info">
                     <h1>Raw Vegan Carrot Cake</h1>
-                    <p>Hříšně čokoládový raw dort s ořechovým základem, jemným kakaovým krémem a přirozenou sladkostí
-                         datlí.
-                         Vyrobený bez lepku, bez přidaného cukru a samozřejmě 100% vegan. Ideální pro všechny milovníky
-                         čokolády, kteří se chtějí cítit dobře po každém soustu.</p>
-                    <p>Ingredients: Dates, walnuts, carrot, shredded coconut, gluten free oat flakes, agave syrup, tahini
-                    (sesame seeds), lemon juice, cinnamom, nutmeg, dried ginger, vanilla, salt.</p>
-                    <p class="price">Price: from 48 CHF</p>
+                    <p class="ingredients">
+                         <strong>Ingredients:</strong> Dates, walnuts, carrot, shredded coconut, gluten free oat flakes, agave syrup, tahini (sesame seeds), lemon juice,
+                         cinnamom, nutmeg, dried ginger, vanilla, salt.
+                    </p>
+
+                    <div class="price-box">
+                         <h4>Price</h4>
+                         <ul>
+                              <li>&#248; 18 cm (8 slices) — <strong>54 CHF</strong></li>
+                              <li>&#248; 24 cm (12–14 slices) — <strong>85 CHF</strong></li>
+                              <li>Single square — from <strong>4,2 CHF</strong></li>
+                         </ul>
+                    </div>
+
+                    <p class="squares">Price of single square option depens on a quantity of your order. Please contact
+                         me for more information.</p>
+
                     <a href="contact.html" class="btn">Order</a>
                </div>
           </section>
 
           <section class="related">
-               <h2>Another cakes you might like</h2>
+               <h2>Other cakes you might like</h2>
                <div class="related-grid">
                     <div class="related-card">
-                         <img src="images/brownie1.jpg" alt="Carrot Cake">
-                         <h3>Brownie</h3>
-                         <a href="gallery.html">Show</a>
+                         <img src="images/browniepcs.jpg" alt="Brownie Cake">
+                         <h3>Brownie Cake</h3>
+                         <a href="brownie.html">Show</a>
                     </div>
                     <div class="related-card">
-                         <img src="images/matcha.jpg" alt="Matcha cake">
+                         <img src="images/matcha.jpg" alt="Matcha Cake">
                          <h3>Matcha Cake</h3>
-                         <a href="gallery.html">Show</a>
+                         <a href="matcha.html">Show</a>
                     </div>
                </div>
           </section>
      </main>
 
      <footer>
-          <p>&copy; 2025 Raw Delight Cakes. All Rights Reserved. <a href="https://www.instagram.com/adelinacakes_ch/"
+          <p>&copy; 2025 Adelina Cakes. All Rights Reserved. <a href="https://www.instagram.com/adelinacakes_ch/"
                     target="_blank">Instagram</a></p>
      </footer>
+
+     <script>
+          function changeImage(element) {
+               const mainImage = document.getElementById("main-image");
+               mainImage.src = element.src;
+
+               // update active state
+               document.querySelectorAll('.gallery-thumbnails img').forEach(img => img.classList.remove('active'));
+               element.classList.add('active');
+          }
+     </script>
 
 </body>
 
